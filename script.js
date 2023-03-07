@@ -35,7 +35,7 @@ var validationItem = document.querySelector(".validationItem")
 // M = 10
 // L = 15
 
-rmbRateValue.innerHTML = rateRmb.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+rmbRateValue.innerHTML = Number(rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
 // Input RMB
 rmb.addEventListener('input', rmbValue); 
@@ -86,15 +86,15 @@ function displayResults() {
             // validationItem.style.display = "block";
         // }else{
             // console.log(rmbValue);
-            let rmbVal = Number(rmbValue);
-            let shippingValue = Number(packageSizeVal);
-            let totalValue = Number(+rmbVal + shippingValue + handlingValue);
+            const rmbVal = Number(rmbValue);
+            const shippingValue = Number(packageSizeVal);
+            const totalValue = Number(+rmbVal + shippingValue + handlingValue);
             // let fromRate = currency.rates[resultFrom]; 
             // let toRate = currency.rates[resultTo]; 
-            finalValue.innerHTML = (totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            finalValue.innerHTML = Number(totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
             // itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-            shipValue.innerHTML = (shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-            handlValue.innerHTML = (handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            shipValue.innerHTML = Number(shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            handlValue.innerHTML = Number(handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
         // }
         
 } 
