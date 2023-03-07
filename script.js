@@ -20,6 +20,8 @@ var shippingValue;
 var handlingValue;
 var totalValue;
 
+var validationItem = document.querySelector(".validationItem")
+
 // Package Size Price
 // S = 10
 // M = 15
@@ -72,19 +74,28 @@ ps.addEventListener('change', (event) => {
 // when user clicks, it calls function getresults  
 convert.addEventListener("click", displayResults); 
 // function getresults 
-function getResults() { 
-    then(displayResults);
-}
-function displayResults() { 
-    let rmbVal = rmbValue;
-    let shippingValue = packageSizeVal;
-    let totalValue = +rmbVal + shippingValue + handlingValue;
-    // let fromRate = currency.rates[resultFrom]; 
-    // let toRate = currency.rates[resultTo]; 
-    finalValue.innerHTML = (totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-    itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-    shipValue.innerHTML = (shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-    handlValue.innerHTML = (handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+// function getResults() { 
+//     if(!rmb&&packageSizeVal=='0'){
+//         validationItem.style.display = "block"; 
+//     }else{
+//     then(displayResults);
+//     }
+// }
+function displayResults() {
+        // if(rmbValue === "" || shipValue === ""){
+            // validationItem.style.display = "block";
+        // }else{
+            let rmbVal = rmbValue;
+            let shippingValue = packageSizeVal;
+            let totalValue = +rmbVal + shippingValue + handlingValue;
+            // let fromRate = currency.rates[resultFrom]; 
+            // let toRate = currency.rates[resultTo]; 
+            finalValue.innerHTML = (totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            shipValue.innerHTML = (shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            handlValue.innerHTML = (handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+        // }
+        
 } 
 
 function clearVal() { 

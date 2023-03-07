@@ -11,16 +11,20 @@
 	</head>
 <body>
 	<div class="container py-5">
-		<h1 class="display-6 text-center mb-5">MOKG <span style="color: #FF4200;">TaoBao</span> Calculator</h1>
+		<h1 class="display-6 text-center mb-5">MOKG <span style="color: #FF4200;">Proxy</span> Calculator</h1>
 		<div class="row">
 			<div class="col-md">
-				<div class="card mb-3">
+				<div class="card mb-3 needs-validation" novalidate>
 					<div class="card-body">
 			
 					<div class="mb-2">
 						<label for="oamount" class="form-label">RMB Price</label>
+						<div style="display: none;" class="alert alert-danger mb-0 mb-2 py-2 validationItem" role="alert">
+							Item price is invalid.
+						</div>
 						<input type="text" class="form-control rmb" placeholder="0" id="oamount">
 						<div class="form-text">Current RMB Rate : <span class="rmbRateValue fw-bold"></span></div>
+						
 					</div>
 			
 					<div class="mb-3">
@@ -53,12 +57,12 @@
 						<table class="table table-striped-columns">
 							<thead>
 								<tr>
-									<th scope="col">Items</th>
-									<th scope="col">Price (IDR)</th>
+									<th scope="col">Item</th>
+									<th scope="col">IDR</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								<!-- <tr>
 									<td>Item Cost</td>
 									<td class="itemValue">0 IDR</td>
 								</tr>
@@ -69,10 +73,10 @@
 								<tr>
 									<td>Shipping Cost</td>
 									<td class="shippingValue">0 IDR</td>
-								</tr>
+								</tr> -->
 								
-								<tr class="table-light fw-bold border-top">
-									<td>Total Price Estimation</td>
+								<tr class="table-light border-top">
+									<td>Price Estimation</td>
 									<td class="finalValue">0 IDR</td>
 								</tr>
 							</tbody>
@@ -80,7 +84,7 @@
 						<ul class="list-unstyled">
 							<li>Disclaimer:
 								<ul>
-									<li>This price are just only rough estimation</li>
+									<li>This price are just only rough estimation for price conversion with shipping fees</li>
 									<li>Local shipping & handling are <span class="fw-bold">excluded</span> from this estimation</li>
 									<li>There will be slight change for RMB rate from time to time</li>
 								</ul>
