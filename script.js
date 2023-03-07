@@ -45,14 +45,32 @@ ps.addEventListener('change', (event) => {
 		if(packageSize=="S"){
 				packageSizeVal = 10 + ((10 /100) * 25);
 				handlingValue = 5;
+
+				const rmbVal = Number(rmbValue);
+				const shippingValue = Number(packageSizeVal);
+				const totalValue = Number(rmbVal + shippingValue + handlingValue);
+
+				finalValue.textContent = Number(totalValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 		}else if(packageSize=="M"){
 				packageSizeVal = 15 + ((15 / 100) * 25);
 				handlingValue = 10;
+
+				const rmbVal = Number(rmbValue);
+				const shippingValue = Number(packageSizeVal);
+				const totalValue = Number(rmbVal + shippingValue + handlingValue);
+
+				finalValue.textContent = Number(totalValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 		}else if(packageSize=="L"){
 				packageSizeVal = 25 + ((25 / 100) * 25);
 				handlingValue = 15;
+
+				const rmbVal = Number(rmbValue);
+				const shippingValue = Number(packageSizeVal);
+				const totalValue = Number(rmbVal + shippingValue + handlingValue);
+
+				finalValue.textContent = Number(totalValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 		}else{
-				packageSizeVal = 0
+				finalValue.textContent = "Invalid Package Size";
 		};
 }); 
 
@@ -61,14 +79,14 @@ ps.addEventListener('change', (event) => {
 convert.addEventListener("click", displayResults); 
 
 function displayResults() {
-	const rmbVal = Number(rmbValue);
-	const shippingValue = Number(packageSizeVal);
-	const totalValue = Number(rmbVal + shippingValue + handlingValue);
-	// console.log(totalValue);
-	finalValue.textContent = Number(totalValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-	// itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-	shipValue.textContent = Number(shippingValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-	handlValue.textContent = Number(handlingValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	// const rmbVal = Number(rmbValue);
+	// const shippingValue = Number(packageSizeVal);
+	// const totalValue = Number(rmbVal + shippingValue + handlingValue);
+	// // console.log(totalValue);
+	// finalValue.textContent = Number(totalValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	// // itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	// shipValue.textContent = Number(shippingValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	// handlValue.textContent = Number(handlingValue * rateRmb).toLocaleString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 				
 } 
 
