@@ -36,7 +36,7 @@ rmbRateValue.innerHTML = Number(rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{
 rmb.addEventListener('input', rmbValue); 
 function rmbValue(x) { 
 		rmbValue = Number(x.target.value);
-} 
+};
 
 ps.addEventListener('change', (event) => { 
 
