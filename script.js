@@ -30,7 +30,7 @@ let totalValue;
 // M = 10
 // L = 15
 
-rmbRateValue.innerHTML = Number(rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+rmbRateValue.textContent = Number(rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
 // Input RMB
 rmb.addEventListener('input', rmbValue); 
@@ -65,10 +65,10 @@ function displayResults() {
 	const shippingValue = Number(packageSizeVal);
 	const totalValue = Number(rmbVal + shippingValue + handlingValue);
 	// console.log(totalValue);
-	finalValue.innerHTML = Number(totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	finalValue.textContent = Number(totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 	// itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-	shipValue.innerHTML = Number(shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-	handlValue.innerHTML = Number(handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	shipValue.textContent = Number(shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	handlValue.textContent = Number(handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 				
 } 
 
