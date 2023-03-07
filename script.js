@@ -2,7 +2,7 @@
 // var search = document.querySelector(".searchBox");
 
 var rmb = document.querySelector(".rmb")
-var rateRmb = '2400';
+var rateRmb = Number('2400');
 var convert = document.querySelector(".convert"); 
 // var fromCurrecy = document.querySelector(".from"); 
 // var toCurrecy = document.querySelector(".to"); 
