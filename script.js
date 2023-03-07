@@ -1,18 +1,18 @@
 // for selecting different controls 
 // var search = document.querySelector(".searchBox");
 
-var rmb = document.querySelector(".rmb")
+const rmb = document.querySelector(".rmb");
 const rateRmb = Number('2400');
 var convert = document.querySelector(".convert"); 
 // var fromCurrecy = document.querySelector(".from"); 
 // var toCurrecy = document.querySelector(".to"); 
 var ps = document.querySelector(".ps");
 
-var finalValue = document.querySelector(".finalValue");
-var itemValue = document.querySelector(".itemValue");
-var shipValue = document.querySelector(".shippingValue")
-var handlValue = document.querySelector(".handlingValue");
-var rmbRateValue = document.querySelector(".rmbRateValue");
+const finalValue = document.querySelector(".finalValue");
+const itemValue = document.querySelector(".itemValue");
+const shipValue = document.querySelector(".shippingValue")
+const handlValue = document.querySelector(".handlingValue");
+const rmbRateValue = document.querySelector(".rmbRateValue");
 
 // var resultFrom; 
 var packageSize;
@@ -40,7 +40,7 @@ rmbRateValue.innerHTML = rateRmb.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\
 // Input RMB
 rmb.addEventListener('input', rmbValue); 
 function rmbValue(x) { 
-    const rmbValue = Number(x.target.value);
+    rmbValue = Number(x.target.value);
 } 
 
 ps.addEventListener('change', (event) => { 
@@ -85,13 +85,14 @@ function displayResults() {
         // if(rmbValue === "" || shipValue === ""){
             // validationItem.style.display = "block";
         // }else{
-            const rmbVal = Number(rmbValue);
-            const shippingValue = Number(packageSizeVal);
-            const totalValue = Number(+rmbVal + shippingValue + handlingValue);
+            // console.log(rmbValue);
+            let rmbVal = Number(rmbValue);
+            let shippingValue = Number(packageSizeVal);
+            let totalValue = Number(+rmbVal + shippingValue + handlingValue);
             // let fromRate = currency.rates[resultFrom]; 
             // let toRate = currency.rates[resultTo]; 
             finalValue.innerHTML = (totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-            itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+            // itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
             shipValue.innerHTML = (shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
             handlValue.innerHTML = (handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
         // }
