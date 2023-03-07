@@ -1,11 +1,6 @@
-// for selecting different controls 
-// var search = document.querySelector(".searchBox");
-
 const rmb = document.querySelector(".rmb");
 const rateRmb = Number('2400');
 var convert = document.querySelector(".convert"); 
-// var fromCurrecy = document.querySelector(".from"); 
-// var toCurrecy = document.querySelector(".to"); 
 var ps = document.querySelector(".ps");
 
 const finalValue = document.querySelector(".finalValue");
@@ -40,66 +35,43 @@ rmbRateValue.innerHTML = Number(rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{
 // Input RMB
 rmb.addEventListener('input', rmbValue); 
 function rmbValue(x) { 
-    rmbValue = Number(x.target.value);
+		rmbValue = Number(x.target.value);
 } 
 
 ps.addEventListener('change', (event) => { 
 
-    packageSize = `${event.target.value}`; 
+		packageSize = `${event.target.value}`; 
 
-    if(packageSize=="S"){
-        packageSizeVal = 10 + ((10 /100) * 25);
-        handlingValue = 5;
-    }else if(packageSize=="M"){
-        packageSizeVal = 15 + ((15 / 100) * 25);
-        handlingValue = 10;
-    }else if(packageSize=="L"){
-        packageSizeVal = 25 + ((25 / 100) * 25);
-        handlingValue = 15;
-    }else{
-        packageSizeVal = 0
-    };
+		if(packageSize=="S"){
+				packageSizeVal = 10 + ((10 /100) * 25);
+				handlingValue = 5;
+		}else if(packageSize=="M"){
+				packageSizeVal = 15 + ((15 / 100) * 25);
+				handlingValue = 10;
+		}else if(packageSize=="L"){
+				packageSizeVal = 25 + ((25 / 100) * 25);
+				handlingValue = 15;
+		}else{
+				packageSizeVal = 0
+		};
 }); 
 
-// if(packageSize=="S"){
-//     packageSizeVal = 10;
-// }else if(packageSize=="M"){
-//     packageSizeVal = 15;
-// }else if(packageSize=="L"){
-//     packageSizeVal = 25;
-// }else{
-//     packageSizeVal = 0
-// };
 
 // when user clicks, it calls function getresults  
 convert.addEventListener("click", displayResults); 
-// function getresults 
-// function getResults() { 
-//     if(!rmb&&packageSizeVal=='0'){
-//         validationItem.style.display = "block"; 
-//     }else{
-//     then(displayResults);
-//     }
-// }
+
 function displayResults() {
-        // if(rmbValue === "" || shipValue === ""){
-            // validationItem.style.display = "block";
-        // }else{
-            // console.log(rmbValue);
-            const rmbVal = Number(rmbValue);
-            const shippingValue = Number(packageSizeVal);
-            const totalValue = Number(+rmbVal + shippingValue + handlingValue);
-            // let fromRate = currency.rates[resultFrom]; 
-            // let toRate = currency.rates[resultTo]; 
-            finalValue.innerHTML = Number(totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-            // itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-            shipValue.innerHTML = Number(shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-            handlValue.innerHTML = Number(handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
-        // }
-        
+	const rmbVal = Number(rmbValue);
+	const shippingValue = Number(packageSizeVal);
+	const totalValue = Number(+rmbVal + shippingValue + handlingValue);
+	finalValue.innerHTML = Number(totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	// itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	shipValue.innerHTML = Number(shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+	handlValue.innerHTML = Number(handlingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
+				
 } 
 
 function clearVal() { 
-    window.location.reload(); 
-    document.getElementsByClassName("finalValue").innerHTML = ""; 
+		window.location.reload(); 
+		document.getElementsByClassName("finalValue").innerHTML = ""; 
 };
