@@ -2,7 +2,7 @@
 // var search = document.querySelector(".searchBox");
 
 var rmb = document.querySelector(".rmb")
-var rateRmb = Number('2400');
+const rateRmb = Number('2400');
 var convert = document.querySelector(".convert"); 
 // var fromCurrecy = document.querySelector(".from"); 
 // var toCurrecy = document.querySelector(".to"); 
@@ -40,7 +40,7 @@ rmbRateValue.innerHTML = rateRmb.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\
 // Input RMB
 rmb.addEventListener('input', rmbValue); 
 function rmbValue(x) { 
-    rmbValue = Number(x.target.value);
+    const rmbValue = Number(x.target.value);
 } 
 
 ps.addEventListener('change', (event) => { 
@@ -85,9 +85,9 @@ function displayResults() {
         // if(rmbValue === "" || shipValue === ""){
             // validationItem.style.display = "block";
         // }else{
-            let rmbVal = Number(rmbValue);
-            let shippingValue = Number(packageSizeVal);
-            let totalValue = Number(+rmbVal + shippingValue + handlingValue);
+            const rmbVal = Number(rmbValue);
+            const shippingValue = Number(packageSizeVal);
+            const totalValue = Number(+rmbVal + shippingValue + handlingValue);
             // let fromRate = currency.rates[resultFrom]; 
             // let toRate = currency.rates[resultTo]; 
             finalValue.innerHTML = (totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
