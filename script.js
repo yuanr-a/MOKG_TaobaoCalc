@@ -85,9 +85,9 @@ function displayResults() {
         // if(rmbValue === "" || shipValue === ""){
             // validationItem.style.display = "block";
         // }else{
-            let rmbVal = rmbValue;
+            let rmbVal = Number(rmbValue);
             let shippingValue = Number(packageSizeVal);
-            let totalValue = +rmbVal + shippingValue + handlingValue;
+            let totalValue = Number(+rmbVal + shippingValue + handlingValue);
             // let fromRate = currency.rates[resultFrom]; 
             // let toRate = currency.rates[resultTo]; 
             finalValue.innerHTML = (totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
