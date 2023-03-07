@@ -1,7 +1,7 @@
 const rmb = document.querySelector(".rmb");
 const rateRmb = Number('2400');
-var convert = document.querySelector(".convert"); 
-var ps = document.querySelector(".ps");
+let convert = document.querySelector(".convert"); 
+let ps = document.querySelector(".ps");
 
 const finalValue = document.querySelector(".finalValue");
 const itemValue = document.querySelector(".itemValue");
@@ -10,12 +10,12 @@ const handlValue = document.querySelector(".handlingValue");
 const rmbRateValue = document.querySelector(".rmbRateValue");
 
 // var resultFrom; 
-var packageSize;
-var shippingValue;
-var handlingValue;
-var totalValue;
+let packageSize;
+let shippingValue;
+let handlingValue;
+let totalValue;
 
-var validationItem = document.querySelector(".validationItem")
+// var validationItem = document.querySelector(".validationItem")
 
 // Package Size Price
 // S = 10
@@ -63,7 +63,8 @@ convert.addEventListener("click", displayResults);
 function displayResults() {
 	const rmbVal = Number(rmbValue);
 	const shippingValue = Number(packageSizeVal);
-	const totalValue = Number(+rmbVal + shippingValue + handlingValue);
+	const totalValue = Number(rmbVal + shippingValue + handlingValue);
+	// console.log(totalValue);
 	finalValue.innerHTML = Number(totalValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 	// itemValue.innerHTML = (rmbVal * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
 	shipValue.innerHTML = Number(shippingValue * rateRmb).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " IDR";
