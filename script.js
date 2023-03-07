@@ -40,7 +40,7 @@ rmbRateValue.innerHTML = rateRmb.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\
 // Input RMB
 rmb.addEventListener('input', rmbValue); 
 function rmbValue(x) { 
-    rmbValue = x.target.value; 
+    rmbValue = Number(x.target.value);
 } 
 
 ps.addEventListener('change', (event) => { 
@@ -86,7 +86,7 @@ function displayResults() {
             // validationItem.style.display = "block";
         // }else{
             let rmbVal = rmbValue;
-            let shippingValue = packageSizeVal;
+            let shippingValue = Number(packageSizeVal);
             let totalValue = +rmbVal + shippingValue + handlingValue;
             // let fromRate = currency.rates[resultFrom]; 
             // let toRate = currency.rates[resultTo]; 
